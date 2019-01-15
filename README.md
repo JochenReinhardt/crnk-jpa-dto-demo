@@ -1,0 +1,1 @@
+# crnk-jpa-dto-demo
