@@ -1,4 +1,4 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo.modern;
+package io.crnk.demo.jpa.repositorydecorator.modern;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

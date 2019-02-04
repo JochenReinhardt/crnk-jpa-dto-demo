@@ -1,4 +1,4 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo.modern;
+package io.crnk.demo.jpa.manytomany.left;
 
 import io.crnk.jpa.mapping.JpaMapper;
 import io.crnk.jpa.query.Tuple;
@@ -8,30 +8,30 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManager;
 
 @Component
-public class ModernJpaMapper implements JpaMapper<ModernEntity, ModernDTO> {
+public class LeftJpaMapper implements JpaMapper<LeftEntity, LeftDTO> {
     private EntityManager entityManager;
 
     @Autowired
-    public ModernJpaMapper(EntityManager entityManager) {
+    public LeftJpaMapper(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public ModernDTO map(Tuple tuple) {
-        ModernEntity entity = tuple.get(0, ModernEntity.class);
-        ModernDTO dto = new ModernDTO();
+    public LeftDTO map(Tuple tuple) {
+        LeftEntity entity = tuple.get(0, LeftEntity.class);
+        LeftDTO dto = new LeftDTO();
         dto.setId(entity.getId());
         dto.setValue(entity.getValue());
         return dto;
     }
 
     @Override
-    public ModernEntity unmap(ModernDTO dto) {
-        ModernEntity entity;
+    public LeftEntity unmap(LeftDTO dto) {
+        LeftEntity entity;
         if (dto.getId() == null) {
-            entity = new ModernEntity();
+            entity = new LeftEntity();
         } else {
-            entity = entityManager.find(ModernEntity.class, dto.getId());
+            entity = entityManager.find(LeftEntity.class, dto.getId());
         }
         entity.setValue(dto.getValue());
         return entity;

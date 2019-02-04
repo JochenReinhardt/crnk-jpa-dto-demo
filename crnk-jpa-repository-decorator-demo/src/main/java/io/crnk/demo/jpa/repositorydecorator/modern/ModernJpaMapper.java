@@ -1,4 +1,4 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo.modern;
+package io.crnk.demo.jpa.repositorydecorator.modern;
 
 import io.crnk.jpa.mapping.JpaMapper;
 import io.crnk.jpa.query.Tuple;

@@ -1,4 +1,4 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo.modern;
+package io.crnk.demo.jpa.repositorydecorator.traditional;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,14 +12,14 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ModernEntity {
+public class TraditionalEntity {
     @Id
     @GeneratedValue
     private Long id;
 
     private String value;
 
-    public ModernEntity(String value) {
+    public TraditionalEntity(String value) {
         this.value = value;
     }
 

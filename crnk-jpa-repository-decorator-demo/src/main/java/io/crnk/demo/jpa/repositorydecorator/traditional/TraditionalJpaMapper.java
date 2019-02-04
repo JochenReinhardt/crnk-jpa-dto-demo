@@ -1,4 +1,4 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo.modern;
+package io.crnk.demo.jpa.repositorydecorator.traditional;
 
 import io.crnk.jpa.mapping.JpaMapper;
 import io.crnk.jpa.query.Tuple;
@@ -8,30 +8,30 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManager;
 
 @Component
-public class ModernJpaMapper implements JpaMapper<ModernEntity, ModernDTO> {
+public class TraditionalJpaMapper implements JpaMapper<TraditionalEntity, TraditionalDTO> {
     private EntityManager entityManager;
 
     @Autowired
-    public ModernJpaMapper(EntityManager entityManager) {
+    public TraditionalJpaMapper(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public ModernDTO map(Tuple tuple) {
-        ModernEntity entity = tuple.get(0, ModernEntity.class);
-        ModernDTO dto = new ModernDTO();
+    public TraditionalDTO map(Tuple tuple) {
+        TraditionalEntity entity = tuple.get(0, TraditionalEntity.class);
+        TraditionalDTO dto = new TraditionalDTO();
         dto.setId(entity.getId());
         dto.setValue(entity.getValue());
         return dto;
     }
 
     @Override
-    public ModernEntity unmap(ModernDTO dto) {
-        ModernEntity entity;
+    public TraditionalEntity unmap(TraditionalDTO dto) {
+        TraditionalEntity entity;
         if (dto.getId() == null) {
-            entity = new ModernEntity();
+            entity = new TraditionalEntity();
         } else {
-            entity = entityManager.find(ModernEntity.class, dto.getId());
+            entity = entityManager.find(TraditionalEntity.class, dto.getId());
         }
         entity.setValue(dto.getValue());
         return entity;

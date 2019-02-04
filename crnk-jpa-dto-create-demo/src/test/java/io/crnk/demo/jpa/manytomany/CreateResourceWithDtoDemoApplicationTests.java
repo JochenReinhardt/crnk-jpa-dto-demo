@@ -1,8 +1,9 @@
-package io.crnk.demo.jpa.createresourcewithdtodemo;
+package io.crnk.demo.jpa.manytomany;
 
 import io.crnk.client.CrnkClient;
 import io.crnk.core.queryspec.QuerySpec;
 import io.crnk.core.repository.ResourceRepositoryV2;
+import io.crnk.demo.jpa.createresourcewithdtodemo.CreateResourceWithDtoDemoApplication;
 import io.crnk.demo.jpa.createresourcewithdtodemo.modern.ModernDTO;
 import io.crnk.demo.jpa.createresourcewithdtodemo.traditional.TraditionalDTO;
 import io.crnk.spring.client.RestTemplateAdapter;
