@@ -10,7 +10,7 @@
     <groupId>io.crnk.demo.jpa</groupId>
     <artifactId>crnk-jpa-many-to-many-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>crnk-jpa-repository-decorator-demo</name>
+    <name>crnk-jpa-many-to-many-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <build>
