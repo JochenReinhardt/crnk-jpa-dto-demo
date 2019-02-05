@@ -25,6 +25,7 @@
 		<module>crnk-jpa-repository-decorator-demo</module>
 		<module>crnk-jpa-many-to-many-demo</module>
 		<module>crnk-jpa-many-to-many-legacy-demo</module>
+		<module>crnk-jpa-computed-value-demo</module>
 	</modules>
 
 	<dependencies>

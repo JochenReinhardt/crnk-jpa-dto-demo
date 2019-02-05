@@ -15,17 +15,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RepositoryDecoratorDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RepositoryDecoratorDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RepositoryDecoratorDemoApplication.class, args);
+    }
 
-	@Bean
-	public JpaModuleConfigurer jpaModuleConfigurer(TraditionalJpaMapper mapper) {
-		return config -> config.addRepository(
-				JpaRepositoryConfig.builder(TraditionalEntity.class, TraditionalDTO.class, mapper)
-						.setRepositoryDecorator(new TraditionalRepositoryDecorator())
-						.build());
-	}
+    @Bean
+    public JpaModuleConfigurer jpaModuleConfigurer(TraditionalJpaMapper mapper) {
+        return config -> {
+            config.setTotalResourceCountUsed(false);
+            config.addRepository(
+                    JpaRepositoryConfig.builder(TraditionalEntity.class, TraditionalDTO.class, mapper)
+                            .setRepositoryDecorator(new TraditionalRepositoryDecorator())
+                            .build());
+        };
+    }
 
 }
 

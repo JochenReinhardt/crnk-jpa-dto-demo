@@ -1,9 +1,6 @@
 package io.crnk.demo.jpa.manytomany.left;
 
-import io.crnk.core.resource.annotations.JsonApiId;
-import io.crnk.core.resource.annotations.JsonApiRelation;
-import io.crnk.core.resource.annotations.JsonApiResource;
-import io.crnk.core.resource.annotations.LookupIncludeBehavior;
+import io.crnk.core.resource.annotations.*;
 import io.crnk.demo.jpa.manytomany.right.RightDTO;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +19,6 @@ public class LeftDTO {
 
     private String value;
 
-    @JsonApiRelation(lookUp = LookupIncludeBehavior.AUTOMATICALLY_WHEN_NULL)
+    @JsonApiRelation(repositoryBehavior = RelationshipRepositoryBehavior.FORWARD_OWNER, lookUp = LookupIncludeBehavior.AUTOMATICALLY_WHEN_NULL, serialize = SerializeType.LAZY)
     private List<RightDTO> rights;
 }
